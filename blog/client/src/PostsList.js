@@ -1,26 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import ErrorBoundary from './ErrorBoundary';
 
 import axios from 'axios';
 
 const PostsList = () => {
-  const [users, setUsers] = useState({});
-
-  const getUsers = async () => {
+  const [posts, setPosts] = useState({});
+  const getPosts = async () => {
     try {
-      const users = await axios.get('http://localhost:4000/posts');
-      //return users;
-      setUsers(users);
-      console.log(users);
+      const res = await axios.get('http://localhost:4000/posts');
+      setPosts(res.data);
     } catch (error) {
       console.log(error);
     }
   };
+
+  useEffect(() => {
+    getPosts();
+  }, []);
+
   return (
-    <div>
-      <h2>Posts list</h2>
-      <pre>{JSON.stringify(users.data, null, 2)}</pre>
-      <button onClick={getUsers}>Get users</button>
-    </div>
+    <ErrorBoundary>
+      <div>
+        <h4>Posts list</h4>
+        <div>
+          {Object.values(posts).map((post) => (
+            <div key={post.id}>{post.title}</div>
+          ))}
+        </div>
+        {/* <pre className='card '>{JSON.stringify(posts, null, 2)}</pre> */}
+        {/* <button className='btn' onClick={getPosts}>
+          Get users
+        </button> */}
+      </div>
+    </ErrorBoundary>
   );
 };
 

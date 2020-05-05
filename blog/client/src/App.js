@@ -1,13 +1,18 @@
 import React from 'react';
 
 import PostsLists from './PostsList';
+import CreatePost from './CreatePost';
+import ErrorBoundary from './ErrorBoundary';
 
 const App = () => {
   return (
-    <div className='container'>
-      <h1>App</h1>
-      <PostsLists />
-    </div>
+    <ErrorBoundary>
+      <div className='container'>
+        <h1>App</h1>
+        <CreatePost />
+        <PostsLists />
+      </div>
+    </ErrorBoundary>
   );
 };
 
