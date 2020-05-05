@@ -3,6 +3,7 @@ import React from 'react';
 import PostsLists from './PostsList';
 import CreatePost from './CreatePost';
 import ErrorBoundary from './ErrorBoundary';
+import './App.css';
 
 const App = () => {
   return (

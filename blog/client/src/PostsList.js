@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ErrorBoundary from './ErrorBoundary';
+import Comments from './Comments';
+import CreateComment from './CreateComment';
 
 import axios from 'axios';
 
@@ -20,11 +22,15 @@ const PostsList = () => {
 
   return (
     <ErrorBoundary>
-      <div>
+      <div className='px-4'>
         <h4>Posts list</h4>
         <div>
           {Object.values(posts).map((post) => (
-            <div key={post.id}>{post.title}</div>
+            <div className='card px-4 pt-2' key={post.id}>
+              <h5>{post.title}</h5>
+              <CreateComment postId={post.id} />
+              <Comments postId={post.id} />
+            </div>
           ))}
         </div>
         {/* <pre className='card '>{JSON.stringify(posts, null, 2)}</pre> */}
