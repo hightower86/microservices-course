@@ -18,13 +18,10 @@ const CreatePost = () => {
     console.dir(e);
   };
   return (
-    <div
-      className='container card'
-      style={{ paddingLeft: '1rem', paddingRight: '1rem' }}
-    >
+    <div className='' style={{ paddingLeft: '1rem', paddingRight: '1rem' }}>
       <h5>Create new post</h5>
       <form onSubmit={onSubmit} className='row'>
-        <div className='input-field '>
+        <div className=' '>
           {/* <i className='material-icons prefix'>textsms</i> */}
           <input
             onChange={(e) => setTitle(e.target.value)}
@@ -32,12 +29,12 @@ const CreatePost = () => {
             type='text'
             //placeholder='Placeholder'
             id='autocomplete-input'
-            className='autocomplete validate'
+            className=''
           />
           <label className='' htmlFor='autocomplete-input'>
             New post
           </label>
-          <button className='btn-small purple'>Submit</button>
+          <button className=''>Submit</button>
         </div>
       </form>
     </div>

@@ -25,8 +25,8 @@ const Comments = ({ postId }) => {
   ));
 
   return (
-    <div className='px-4'>
-      <p className='blue-text'>Comments:</p>
+    <div className=''>
+      <p className=''>Comments:</p>
       {/* <pre>{JSON.stringify(comments, null, 2)}</pre> */}
       {renderedComments}
     </div>

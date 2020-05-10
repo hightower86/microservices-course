@@ -8,7 +8,7 @@ import './App.css';
 const App = () => {
   return (
     <ErrorBoundary>
-      <div className='container'>
+      <div className=''>
         <h1>App</h1>
         <CreatePost />
         <PostsLists />

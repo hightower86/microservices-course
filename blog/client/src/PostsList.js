@@ -22,11 +22,11 @@ const PostsList = () => {
 
   return (
     <ErrorBoundary>
-      <div className='px-4'>
+      <div className=''>
         <h4>Posts list</h4>
         <div>
           {Object.values(posts).map((post) => (
-            <div className='card px-4 pt-2' key={post.id}>
+            <div className='' key={post.id}>
               <h5>{post.title}</h5>
               <CreateComment postId={post.id} />
               <Comments postId={post.id} />

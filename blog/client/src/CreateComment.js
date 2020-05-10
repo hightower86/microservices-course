@@ -18,10 +18,10 @@ const CreateComment = ({ postId }) => {
   };
 
   return (
-    <div className='card px-4 pt-2'>
+    <div className=''>
       <h6>comment</h6>
       <form onSubmit={onSubmit} className='row'>
-        <div className='input-field '>
+        <div className=' '>
           {/* <i className='material-icons prefix'>textsms</i> */}
           <input
             onChange={(e) => setContent(e.target.value)}
@@ -29,12 +29,12 @@ const CreateComment = ({ postId }) => {
             type='text'
             //placeholder='Placeholder'
             id='autocomplete-input'
-            className='autocomplete validate'
+            className=''
           />
           <label className='' htmlFor='autocomplete-input'>
             New comment
           </label>
-          <button className='btn-small primary'>Add comment</button>
+          <button className=''>Add comment</button>
         </div>
       </form>
     </div>
