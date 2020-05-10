@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 const CreateComment = ({ postId }) => {
-  console.log(postId);
+  //console.log(postId);
   const [content, setContent] = useState('');
 
   const onSubmit = async (event) => {

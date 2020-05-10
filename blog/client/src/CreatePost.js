@@ -3,6 +3,7 @@ import axios from 'axios';
 
 const CreatePost = () => {
   const [title, setTitle] = useState('');
+
   const onSubmit = async (e) => {
     e.preventDefault();
     if (!title) {

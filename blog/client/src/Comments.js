@@ -5,7 +5,7 @@ const Comments = ({ postId }) => {
   const [comments, setComments] = useState([]);
 
   const fetchComments = async () => {
-    console.log(postId);
+    //console.log(postId);
     try {
       const res = await axios.get(
         `http://localhost:4001/posts/${postId}/comments`
