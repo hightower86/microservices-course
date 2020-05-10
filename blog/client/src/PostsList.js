@@ -7,9 +7,10 @@ import axios from 'axios';
 
 const PostsList = () => {
   const [posts, setPosts] = useState({});
+
   const getPosts = async () => {
     try {
-      const res = await axios.get('http://localhost:4000/posts');
+      const res = await axios.get('http://localhost:4002/posts');
       setPosts(res.data);
     } catch (error) {
       console.log(error);
@@ -23,13 +24,13 @@ const PostsList = () => {
   return (
     <ErrorBoundary>
       <div className=''>
-        <h4>Posts list</h4>
+        <h3>Posts list</h3>
         <div>
           {Object.values(posts).map((post) => (
             <div className='' key={post.id}>
-              <h5>{post.title}</h5>
+              <h3>{post.title}</h3>
               <CreateComment postId={post.id} />
-              <Comments postId={post.id} />
+              <Comments comments={post.comments} />
             </div>
           ))}
         </div>

@@ -9,6 +9,10 @@ app.use(cors());
 
 const posts = {};
 
+app.get('/posts', (req, res) => {
+  res.status(200).send(posts);
+});
+
 app.post('/events', (req, res) => {
   const { type, data } = req.body;
   const { id, title, postId, content } = data;
