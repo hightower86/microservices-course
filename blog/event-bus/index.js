@@ -10,6 +10,8 @@ app.post('/events', async (req, res) => {
   const event = req.body;
 
   await axios.post('http://localhost:4000/events', event);
+  await axios.post('http://localhost:4001/events', event);
+
   console.log(event);
   res.status(200).send(event);
 });
