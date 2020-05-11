@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
+import commentStyle from './CreateComment.module.css';
+
 const CreateComment = ({ postId }) => {
   //console.log(postId);
   const [content, setContent] = useState('');
@@ -19,23 +21,18 @@ const CreateComment = ({ postId }) => {
 
   return (
     <div className=''>
-      <h6>comment</h6>
-      <form onSubmit={onSubmit} className='row'>
-        <div className=' '>
-          {/* <i className='material-icons prefix'>textsms</i> */}
-          <input
-            onChange={(e) => setContent(e.target.value)}
-            value={content}
-            type='text'
-            //placeholder='Placeholder'
-            id='autocomplete-input'
-            className=''
-          />
-          <label className='' htmlFor='autocomplete-input'>
-            New comment
-          </label>
-          <button className=''>Add comment</button>
-        </div>
+      <form onSubmit={onSubmit} className='form'>
+        {/* <i className='material-icons prefix'>textsms</i> */}
+        <input
+          onChange={(e) => setContent(e.target.value)}
+          value={content}
+          type='text'
+          placeholder='текс комментария'
+          id='autocomplete-input'
+          className=''
+        />
+
+        <button className=''>Add comment</button>
       </form>
     </div>
   );

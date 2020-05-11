@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
+import cPostStyle from './CreatePost.module.css';
+
 const CreatePost = () => {
   const [title, setTitle] = useState('');
 
@@ -18,24 +20,19 @@ const CreatePost = () => {
     console.dir(e);
   };
   return (
-    <div className='' style={{ paddingLeft: '1rem', paddingRight: '1rem' }}>
+    <div className={cPostStyle.formGroup}>
       <h5>Create new post</h5>
       <form onSubmit={onSubmit} className='row'>
-        <div className=' '>
-          {/* <i className='material-icons prefix'>textsms</i> */}
-          <input
-            onChange={(e) => setTitle(e.target.value)}
-            value={title}
-            type='text'
-            //placeholder='Placeholder'
-            id='autocomplete-input'
-            className=''
-          />
-          <label className='' htmlFor='autocomplete-input'>
-            New post
-          </label>
-          <button className=''>Submit</button>
-        </div>
+        <input
+          onChange={(e) => setTitle(e.target.value)}
+          value={title}
+          type='text'
+          //placeholder='Placeholder'
+          id='autocomplete-input'
+          placeholder='Type text here'
+        />
+
+        <button className=''>Add post</button>
       </form>
     </div>
   );

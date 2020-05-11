@@ -3,6 +3,8 @@ import ErrorBoundary from './ErrorBoundary';
 import Comments from './Comments';
 import CreateComment from './CreateComment';
 
+import style from './PostList.module.css';
+
 import axios from 'axios';
 
 const PostsList = () => {
@@ -23,11 +25,11 @@ const PostsList = () => {
 
   return (
     <ErrorBoundary>
-      <div className=''>
+      <div className={style.container}>
         <h3>Posts list</h3>
         <div>
           {Object.values(posts).map((post) => (
-            <div className='' key={post.id}>
+            <div className={style.post} key={post.id}>
               <h3>{post.title}</h3>
               <CreateComment postId={post.id} />
               <Comments comments={post.comments} />
