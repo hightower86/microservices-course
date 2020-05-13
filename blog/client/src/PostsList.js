@@ -30,7 +30,7 @@ const PostsList = () => {
         <div>
           {Object.values(posts).map((post) => (
             <div className={style.post} key={post.id}>
-              <h3>{post.title}</h3>
+              <h3 className={style.title}>{post.title}</h3>
               <CreateComment postId={post.id} />
               <Comments comments={post.comments} />
             </div>

@@ -8,6 +8,7 @@ const Comments = ({ comments }) => {
   return (
     <div style={{ paddingLeft: '1rem' }}>
       <p className=''>Comments:</p>
+      <hr />
       {/* <pre>{JSON.stringify(comments, null, 2)}</pre> */}
       {renderedComments}
     </div>

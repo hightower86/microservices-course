@@ -15,13 +15,16 @@ app.get('/posts', (req, res) => {
 
 app.post('/events', (req, res) => {
   const { type, data } = req.body;
-  const { id, title, postId, content } = data;
+  let { id, title, postId, content, status } = data;
 
   if (type === 'PostCreated') {
     posts[id] = { id, title, comments: [] };
   }
 
   if (type === 'CommentCreated') {
+    if (status === 'pending') {
+      content = 'coment is pending';
+    }
     posts[postId].comments.push({ id, content });
   }
   console.log(JSON.stringify(posts, null, 2));
