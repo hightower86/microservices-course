@@ -1,22 +1,15 @@
 import React from 'react';
+import PostCreate from './PostCreate';
+import PostList from './PostList';
 
-import PostsLists from './PostsList';
-import CreatePost from './CreatePost';
-import ErrorBoundary from './ErrorBoundary';
-import './App.css';
-
-import appStyle from './App.module.css';
-
-const App = () => {
+export default () => {
   return (
-    <ErrorBoundary>
-      <div className={appStyle.container}>
-        <h1>Blog App</h1>
-        <CreatePost />
-        <PostsLists />
-      </div>
-    </ErrorBoundary>
+    <div className="container">
+      <h1>Create Post</h1>
+      <PostCreate />
+      <hr />
+      <h1>Posts</h1>
+      <PostList />
+    </div>
   );
 };
-
-export default App;
