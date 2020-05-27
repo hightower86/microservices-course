@@ -1,30 +1,15 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
 metadata:
-  name: post-depl
+  name: ingress-srv
+  annotations:
+    kubernetes.io/ingress.class: nginx
 spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: posts
-  template:
-    metadata:
-      labels:
-        app: posts
-    spec:
-      containers:
-        - name: posts
-          image: hightower86/posts
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: posts-clusterip-srv
-spec:
-  selector:
-    app: posts
-  ports:
-    - name: posts
-      protocol: TCP
-      port: 4000
-      targetPort: 4000
+  rules:
+    - host: posts.com
+      http:
+        paths:
+          - path: /posts
+            backend:
+              serviceName: posts-clusterip-srv
+              servicePort: 4000
